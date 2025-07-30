@@ -233,3 +233,14 @@ a:focus, button:focus, .btn:focus{
   section{ padding-block: var(--space-4); }
   h1{ text-align: left; }
 }
+
+.carte h4 {
+  margin-top: .8rem;
+  font-size: 1.1rem;
+  color: var(--velvet);
+}
+
+.carte .tags {
+  font-size: .9rem;
+  color: #555;
+}
