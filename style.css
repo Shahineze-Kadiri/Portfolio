@@ -244,3 +244,462 @@ a:focus, button:focus, .btn:focus{
   font-size: .9rem;
   color: #555;
 }
+
+/* =========================
+   1) HEADER MOBILE-ONLY + LAYOUT DESKTOP
+   - En desktop (>= 1000px), on cache le header
+   - On libère la place à gauche pour la future sidebar
+   ========================= */
+@media (min-width: 1000px){
+  .mobile-only{ display: none; }         /* Cache le header mobile en desktop */
+  main{ padding-left: 240px; }           /* Espace réservé à la sidebar (220px + marge) */
+  body{ padding-top: 0; }                /* Plus besoin de compenser un header fixe */
+}
+
+
+/* =========================
+   2) SIDEBAR (DESKTOP)
+   - Visible seulement sur desktop
+   - Palette luxe (onyx/pearl/champagne)
+   ========================= */
+.sidebar{
+  position: fixed;
+  top: 0; left: 0;
+  height: 100dvh;                 /* prend toute la hauteur viewport */
+  width: 220px;
+  padding: 1.5rem 1rem;
+  background: var(--onyx);
+  color: var(--pearl);
+  display: none;                  /* sera montré en desktop seulement */
+  border-right: 1px solid rgba(255,255,255,.08);
+}
+.sidebar .brand{
+  display: inline-block;
+  color: var(--pearl);
+  font-weight: 700;
+  letter-spacing: .5px;
+  margin-bottom: 1rem;
+  text-decoration: none;
+}
+.sidenav{
+  display: grid;
+  gap: .75rem;
+}
+.sidenav a{
+  color: var(--pearl);
+  opacity: .85;
+  text-decoration: none;
+  padding: .3rem .2rem;
+  border-radius: 6px;
+  transition: color .2s, background-color .2s, opacity .2s;
+}
+.sidenav a:hover{
+  color: var(--champagne);
+  opacity: 1;
+  background: rgba(255,255,255,.06);
+}
+.sidenav a.active{
+  color: var(--champagne);
+  opacity: 1;
+  background: rgba(255,255,255,.10);
+}
+
+@media (min-width: 1000px){
+  .sidebar{ display:block; }      /* visible en desktop */
+}
+
+
+/* =========================
+   3) PANELS & ACCUEIL SIGNATURE
+   ========================= */
+.panel{
+  padding-block: var(--space-5);
+}
+
+.panel--home{
+  display: grid;
+  align-items: center;
+  min-height: calc(100dvh - 0px);  /* plein écran en desktop (le header mobile est caché) */
+}
+
+.signature{
+  font-size: clamp(3rem, 2.2rem + 3vw, 5rem);
+  letter-spacing: .5px;
+  color: var(--velvet);
+}
+.subtitle{
+  font-size: 1.1rem;
+  color: var(--velvet);
+  margin-bottom: 1rem;
+}
+
+
+/* =========================
+   4) GALERIE HORIZONTALE DE PROJETS
+   - Scroll horizontal fluide
+   - Cartes premium (ombrage/hover)
+   ========================= */
+.h-gallery{
+  display: flex;
+  gap: var(--space-4);
+  overflow-x: auto;
+  padding: 1rem 0;
+  scroll-snap-type: x mandatory;          /* enclenche des "arrêts" sur chaque carte */
+  -webkit-overflow-scrolling: touch;      /* inertie sur mobile iOS */
+}
+.h-gallery::-webkit-scrollbar{
+  height: 8px;                            /* barre de scroll discrète */
+}
+.h-gallery::-webkit-scrollbar-thumb{
+  background: rgba(0,0,0,.2);
+  border-radius: 4px;
+}
+
+.h-card{
+  flex: 0 0 auto;                         /* l’élément ne rétrécit pas */
+  width: min(80vw, 460px);                /* responsive : 80% de la largeur viewport (mobile), max 460px (desktop) */
+  scroll-snap-align: start;
+
+  background: var(--marble);
+  border: 1px solid rgba(0,0,0,.06);
+  border-radius: 12px;
+  padding: 1rem;
+  transition: transform .3s, box-shadow .3s;
+  text-align: center;
+}
+.h-card:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 10px 24px rgba(0,0,0,.15);
+}
+.h-card img{
+  width: 100%;
+  height: 220px;
+  object-fit: cover;                      /* recadre proprement */
+  border-radius: 8px;
+}
+.h-card h4{
+  margin-top: .8rem;
+  font-size: 1.15rem;
+  color: var(--velvet);
+}
+.h-card .tags{
+  font-size: .92rem;
+  color: #555;
+}
+
+@media (max-width: 600px){
+  .h-card{ width: 88vw; }
+}
+
+/* =========================
+   5) TIMELINE PARCOURS
+   ========================= */
+.timeline{
+  list-style: none;
+  padding: 0;
+  margin: var(--space-3) 0;
+  display: grid;
+  gap: var(--space-3);
+  position: relative;
+}
+.timeline::before{
+  content:"";
+  position: absolute;
+  left: 10px; top: 0; bottom: 0;
+  width: 2px; background: #ddd;
+}
+.timeline li{
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  gap: var(--space-2);
+}
+.t-bullet{
+  width: 20px; height: 20px; border-radius: 50%;
+  background: var(--champagne);
+  border: 2px solid var(--onyx);
+  margin-top: .2rem;
+}
+.t-card{
+  background: #fff;
+  border: 1px solid rgba(0,0,0,.06);
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+/* =========================
+   6) A PROPOS & CONTACT
+   ========================= */
+.about-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-4);
+  text-align: center;
+}
+
+
+
+.contact-form{
+  display: grid;
+  gap: .8rem;
+  max-width: 560px;
+}
+.contact-form label{
+  display: grid;
+  gap: .35rem;
+}
+.contact-form input,
+.contact-form textarea{
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: .6rem .75rem;
+  font: inherit;
+  background: #fff;
+}
+.contact-links{
+  margin-top: var(--space-2);
+}
+
+/* =========================
+   7) DETAILS ELEGANTS (OPTIONNELS)
+   ========================= */
+
+/* Soulignement doré subtil au survol des liens du contenu */
+main a{
+  position: relative;
+}
+main a::after{
+  content:"";
+  position: absolute;
+  left: 0; bottom: -2px;
+  width: 0; height: 2px;
+  background: var(--champagne);
+  transition: width .25s ease;
+}
+main a:hover::after{
+  width: 100%;
+}
+
+/* Léger zoom au hover des boutons déjà défini : on renforce un peu l’ombre */
+.btn:hover{
+  box-shadow: 0 10px 24px rgba(0,0,0,.18);
+}
+
+/* =========================
+   CENTRER LE TEXTE PAR DEFAUT (pour certaines sections)
+   ========================= */
+
+/* Titres de section et paragraphes d'intro */
+.panel h2,
+.section-intro {
+  text-align: center;
+  margin-inline: auto;    /* pour centrer le bloc */
+}
+
+/* Sous-sections (ex : Projets CESI / Personnels) */
+.panel h3 {
+  text-align: center;
+  margin-top: var(--space-4);
+}
+
+.contact-form,
+.contact-links {
+  margin-inline: auto;      /* centre le bloc */
+  text-align: center;
+}
+
+/* =========================
+   HERO ENRICHIT (dégradé + baseline + icônes)
+   ========================= */
+.panel--home {
+  background: linear-gradient(135deg, var(--marble) 0%, var(--pearl) 100%);
+  text-align: center; /* centrer le contenu */
+  position: relative;
+}
+
+.baseline {
+  font-size: 1.05rem;
+  color: #444;
+  margin-top: .5rem;
+  font-weight: 400;
+}
+
+.signature {
+  position: relative;
+  display: inline-block;
+  margin-bottom: .4rem;
+}
+
+/* Soulignement animé */
+.signature::after {
+  content: "";
+  position: absolute;
+  bottom: -8px; left: 0;
+  width: 0;
+  height: 3px;
+  background: var(--champagne);
+  animation: underline 1.5s ease forwards;
+}
+@keyframes underline {
+  to { width: 100%; }
+}
+
+/* Icônes sociales */
+.social-hero {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+.social-hero a img {
+  width: 28px;
+  height: 28px;
+  filter: grayscale(20%);
+  transition: transform .2s, filter .2s;
+}
+.social-hero a img:hover {
+  transform: scale(1.1);
+  filter: grayscale(0%);
+}
+
+.social-hero a img:hover {
+  transform: scale(1.15);
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.2));
+}
+
+/* =========================
+   FULL-BLEED & CENTRAGE CTA
+   ========================= */
+
+/* 1) Pleine largeur du contenu principal */
+main{
+  width: 100%;           /* plus de largeur max imposée */
+  margin: 0;             /* enlève les marges latérales */
+}
+
+/* On garde l'espace pour la sidebar en desktop */
+@media (min-width: 1000px){
+  main{ padding-left: 240px; }  /* correspond à la largeur de ta sidebar (220px) + marge */
+  body{ padding-top: 0; }       /* en desktop, on cache le header mobile, donc pas besoin de padding-top */
+}
+
+/* Panels : on ajoute un padding latéral fluide (évite le texte collé au bord) */
+.panel{
+  padding-left: clamp(1rem, 3vw, 2rem);
+  padding-right: clamp(1rem, 3vw, 2rem);
+}
+
+/* 2) CTA du hero : centrés et "décollés" */
+.panel--home{
+  text-align: center;
+}
+.panel--home .cta{
+  display: flex;
+  justify-content: center;  /* centre les boutons */
+  gap: 1rem;
+  margin-top: 1rem;         /* décolle légèrement des lignes au-dessus */
+}
+
+/* Option : dégradé discret du hero pour casser le "blanc" */
+.panel--home{
+  background: linear-gradient(135deg, var(--marble) 0%, var(--pearl) 100%);
+}
+
+/* Baseline (phrase d'accroche) un peu plus douce */
+.baseline{
+  font-size: 1.05rem;
+  color: #444;
+  margin-top: .5rem;
+}
+
+/* Soulignement animé sous le nom */
+.signature{
+  position: relative;
+  display: inline-block;
+  margin-bottom: .4rem;
+}
+.signature::after{
+  content:"";
+  position:absolute; left:0; bottom:-8px;
+  height:3px; width:0;
+  background: var(--champagne);
+  animation: underline 1.5s ease forwards;
+}
+@keyframes underline{ to{ width:100%; } }
+
+
+/* =========================
+   MODAL DETAIL PROJET
+   ========================= */
+.modal{
+  position: fixed;
+  inset: 0;
+  display: none;                /* masquée par défaut */
+  place-items: center;
+  background: rgba(0,0,0,.5);
+  z-index: 2000;
+  padding: 1rem;                /* garde un peu d'air sur mobile */
+}
+.modal.open{ display: grid; }
+
+.modal__dialog{
+  width: min(100%, 1000px);
+  background: var(--pearl);
+  color: var(--onyx);
+  border-radius: 14px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.3);
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,.08);
+}
+
+.modal__close{
+  position: absolute;
+  top: 10px; right: 16px;
+  background: transparent;
+  border: none;
+  font-size: 1.8rem;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--velvet);
+}
+
+.modal__content{
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 1.25rem;
+  padding: 1.25rem;
+}
+.modal__media img{
+  width: 100%;
+  height: 100%;
+  max-height: 520px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.modal__text h3{
+  margin-top: .25rem;
+}
+.modal__meta h4{
+  margin: .75rem 0 .25rem 0;
+  color: var(--velvet);
+}
+.modal__actions{
+  margin-top: 1rem;
+  display: flex;
+  gap: .5rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 800px){
+  .modal__content{
+    grid-template-columns: 1fr;
+  }
+  .modal__media img{
+    max-height: 320px;
+  }
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 1rem;
+}
+

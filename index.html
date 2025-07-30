@@ -1,218 +1,357 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <!--
-    ==============================================
-    Portfolio Shahineze — Version starter documentée
-    ==============================================
-    Ce fichier définit la structure (HTML) du site.
-    - Le style est dans "style.css"
-    - Les interactions sont dans "script.js"
-    Bonnes pratiques incluses : accessibilité, SEO léger,
-    et balises Open Graph pour un joli partage.
-  -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio — Shahineze</title>
-  <meta name="description" content="Portfolio de Shahineze — Finance, Data & Tech. Projets, compétences et contact.">
-  <!-- Open Graph (partage réseaux) -->
+  <meta name="description" content="Portfolio de Shahineze — Data, Tech & Finance.">
   <meta property="og:title" content="Portfolio — Shahineze">
   <meta property="og:description" content="Finance, Data & Tech. Projets, compétences et contact.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="">
   <meta property="og:image" content="images/aperçu.png">
 
-  <!-- Polices Google : titres élégants + corps lisible -->
+  <!-- Polices Google -->
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
-
-  <!-- Icône d’onglet -->
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-
-  <!-- Feuille de style -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Lien d’évitement (accessibilité clavier) -->
-  <a class="skip-link" href="#accueil">Aller au contenu</a>
+  <!-- Accessibilité : lien pour passer direct au contenu -->
+  <a class="skip-link" href="#home">Aller au contenu</a>
 
-  <!-- =========================================
-       En-tête fixe avec navigation
-       ========================================= -->
-  <header>
+  <!-- Header mobile uniquement -->
+  <header class="mobile-only">
     <div class="brand">
-      <!-- Le "logo" texte peut être remplacé plus tard par une image -->
-      <a href="#accueil" class="logo" aria-label="Retour à l’accueil">Shahineze</a>
+      <a href="#home" class="logo" aria-label="Retour à l’accueil">Shahineze Kadiri</a>
     </div>
-
-    <!-- Bouton menu mobile (caché sur desktop) -->
     <button class="menu-toggle" aria-expanded="false" aria-controls="nav" aria-label="Ouvrir le menu">
       ☰
     </button>
-
-    <nav id="nav" aria-label="Navigation principale">
+    <nav id="nav">
       <ul>
-        <li><a href="#accueil">Accueil</a></li>
+        <li><a href="#home">Accueil</a></li>
         <li><a href="#projets">Projets</a></li>
-        <li><a href="#competences">Compétences</a></li>
+        <li><a href="#parcours">Parcours</a></li>
+        <li><a href="#about">À propos</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- =========================================
-       Contenu principal
-       ========================================= -->
+  <!-- Sidebar (desktop) -->
+  <aside class="sidebar">
+    <a href="#home" class="brand">Shahineze</a>
+    <nav class="sidenav">
+      <a href="#home">Accueil</a>
+      <a href="#about">À propos</a>
+      <a href="#projets">Projets</a>
+      <a href="#parcours">Parcours</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </aside>
+
+  <!-- Contenu principal -->
   <main>
-    <!-- -------- Accueil -------- -->
-    <section id="accueil" class="reveal">
-      <div class="hero">
-        <h1> Data · Tech · Finance </h1>
-        <p>
-          Étudiante ingénieure passionnée par la finance et la data. 
-          J’allie rigueur analytique, sens de l’esthétique et éthique professionnelle.
-        </p>
+    <!-- HERO accueil signature -->
+    <section id="home" class="panel panel--home reveal">
+      <div class="hero-signature">
+        <h1 class="signature">Shahineze</h1>
+        <p class="subtitle">Data · Tech · Finance</p>
+        <p class="baseline">Étudiante ingénieure — Finance & Data • Future Data Scientist</p>
+
         <div class="cta">
-          <a class="btn" href="#projets">Voir mes projets</a>
-          <a class="btn ghost" href="#contact">Me contacter</a>
+          <a href="#projets" class="btn">Explorer mes projets</a>
+          <a href="#contact" class="btn ghost">Me contacter</a>
+        </div>
+
+        <!-- Icônes sociales -->
+        <div class="social-hero">
+          <a href="https://fra01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.linkedin.com%2Fin%2Fshahineze-k-09ab37328%3Futm_source%3Dshare%26utm_campaign%3Dshare_via%26utm_content%3Dprofile%26utm_medium%3Dandroid_app&data=05%7C02%7Cshahineze.kadiri%40viacesi.fr%7C1dafad5cb73343e35b7208ddcf571b59%7C190ce420b15744aebc2f69563baa5a3b%7C1%7C0%7C638894695213606237%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=WwT%2F6LLvSdoiVZwyc0lTHGDrSLPg%2BBq0h2iaVBTFNgE%3D&reserved=0" target="_blank" aria-label="LinkedIn">
+            <img src="images/LinkedIn-icon.svg" alt="LinkedIn">
+          </a>
+          <a href="https://github.com/Shahineze-Kadiri" target="_blank" aria-label="GitHub">
+            <img src="images/GitHub-icon.svg" alt="GitHub">
+          </a>
+          <a href="mailto:Shahineze.kadiri@viacesi.fr" aria-label="Email">
+            <img src="images/Outlook-icon.svg" alt="Email">
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- -------- Projets -------- -->
-    <section id="projets" class="reveal">
-  <h2>Mes Projets</h2>
-  <p class="section-intro">
-    Sélection de travaux en finance, data et électronique. Cliquez pour voir le dépôt GitHub ou un rapport.
-  </p>
 
-  <!-- ===== Catégorie : Projets CESI ===== -->
-  <h3>Projets CESI</h3>
-  <div class="projets-container">
-    <!-- Projet 1 : STRONGBOX 3000 -->
-    <article class="carte reveal">
-      <!-- Mets ton image ici : /images/strongbox.jpg -->
-      <img src="images/strongbox.jpg" alt="STRONGBOX 3000 — coffret électronique sécurisé">
-      <h4>STRONGBOX 3000</h4>
-      <p class="tags">Projet électronique • Arduino • Circuits</p>
-      <!-- Bouton optionnel : remplace # par ton lien GitHub -->
-      <!-- <a href="https://github.com/TonPseudo/strongbox3000" class="btn" target="_blank" rel="noopener noreferrer">Voir le projet</a> -->
-    </article>
-
-    <!-- (Tu pourras ajouter d’autres cartes CESI ici) -->
-    <!--
-    <article class="carte reveal">
-      <img src="images/nom-image.jpg" alt="Nom du projet">
-      <h4>NOM DU PROJET</h4>
-      <p class="tags">Thème 1 • Thème 2 • Outil</p>
-      <a href="#" class="btn" target="_blank" rel="noopener noreferrer">Voir le projet</a>
-    </article>
-    -->
-
-     <article class="carte reveal">
-      <img src="images/signal780.jpg" alt="Traitement du signal - quelque chose">
-      <h4>Traitement du Signal</h4>
-      <p class="tags">Signal • Onde • transmission réseau • Python</p>
-      <!-- <a href="https://github.com/TonPseudo/Traitement du Signal" class="btn" target="_blank" rel="noopener noreferrer">Voir le projet</a> -->
-    </article>
-
-     <article class="carte reveal">
-      <img src="images/bdd780v2.jpg" alt="Base De Données — Modélisation d'une base de donnée d'une entreprise">
-      <h4> Modélisation de Base De Donnée</h4>
-      <p class="tags">Data • SQL • Excel </p>
-      <!-- <a href="https://github.com/TonPseudo/predict-ia" class="btn" target="_blank" rel="noopener noreferrer">Voir le projet</a> -->
-    </article>
-
-
-  </div>
-
-  <!-- ===== Catégorie : Projets Perso ===== -->
-  <h3>Projets Personels</h3>
-  <div class="projets-container">
-    <article class="carte reveal">
-      <img src="images/dashboard.png" alt="Dashboard KPI financier — tableau de bord interactif">
-      <h4>Dashboard KPI Financier</h4>
-      <p class="tags">Data • Excel • Power BI • visualisation de données</p>
-      <!-- <a href="https://github.com/TonPseudo/predict-ia" class="btn" target="_blank" rel="noopener noreferrer">Voir le projet</a> -->
-    </article>
-
-    <!-- Ajoute ici tes autres projets perso -->
-
-    <article class="carte reveal">
-      <img src="images/Analyse_Données.jpg" alt="Analyse de données capteurs — traitement et extraction de données">
-      <h4>Analyse de Données IoT</h4>
-      <p class="tags">Data • Python • Extractions de Données • Traitement de Données</p>
-      <!-- <a href="https://github.com/TonPseudo/predict-ia" class="btn" target="_blank" rel="noopener noreferrer">Voir le projet</a> -->
-    </article>
-
-    <article class="carte reveal">
-      <img src="images/analyse_ventes.png" alt="Analyse de Ventes Saisonnières">
-      <h4>Analyse des Ventes Saisonnières</h4>
-      <p class="tags"> Excel • Python </p>
-      <!-- <a href="https://github.com/TonPseudo/predict-ia" class="btn" target="_blank" rel="noopener noreferrer">Voir le projet</a> -->
-    </article>
-
-
-  </div>
-</section>
-
-
-    <!-- -------- Compétences -------- -->
-    <section id="competences" class="reveal">
-      <h2>Compétences</h2>
-      <div class="skills">
+<!-- A propos -->
+    <section id="about" class="panel reveal">
+      <h2>À propos</h2>
+      <div class="about-grid">
         <div>
-          <h3>Data & Tech</h3>
-          <ul>
-            <li>Python (pandas, numpy, matplotlib, scikit‑learn)</li>
-            <li>SQL (modélisation, requêtes)</li>
-            <li>Excel avancé (Tableaux croisés, formules)</li>
-            <li>Git & GitHub</li>
-          </ul>
+          <h3>Qui je suis</h3>
+          <p>Étudiante ingénieure orientée Data & Finance, attachée à l’excellence et à l’élégance professionnelle.</p>
         </div>
         <div>
-          <h3>Finance & Business</h3>
+          <h3>Ce que j’apporte</h3>
           <ul>
-            <li>Analyse financière (ratios, valorisation)</li>
-            <li>Marchés & portefeuille (notions)</li>
-            <li>Veille & synthèse</li>
-            <li>Présentation & storytelling</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Soft skills</h3>
-          <ul>
-            <li>Organisation & rigueur</li>
-            <li>Esprit d’analyse</li>
-            <li>Communication</li>
-            <li>Éthique & respect des valeurs</li>
-            <li>Travail d'équipe</li>
+            <li>Analyse de données & rigueur financière</li>
+            <li>Vision business et technique</li>
+            <li>Communication claire et soin du détail</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- -------- Contact -------- -->
-    <section id="contact" class="reveal">
-      <h2>Contact</h2>
-      <p>Ouverte aux opportunités en finance, data, luxe et industrie.</p>
-      <ul class="contact-list">
-        <li>📧 Email : <a href="mailto:ton.email@example.com">ton.email@example.com</a></li>
-        <li>💼 LinkedIn : <a href="https://www.linkedin.com/in/shahineze-k-09ab37328?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app&original_referer=" target="_blank" rel="noopener noreferrer">mon profil</a></li>
-        <li>🐙 GitHub : <a href="#" target="_blank" rel="noopener noreferrer">mon compte</a></li>
+
+    <!-- Projets -->
+    <section id="projets" class="panel panel--projects reveal">
+      <h2>Mes Projets</h2>
+      <p class="section-intro">Projets CESI et personnels (finance, data, tech). Défile horizontalement pour explorer.</p>
+
+      <!-- ======== CESI ======== -->
+      <h3>Projets CESI</h3>
+      <div class="h-gallery">
+
+        <!-- STRONGBOX (avec données pour la modale) -->
+        <article class="h-card"
+          data-summary="Coffret sécurisé (capteur + servo) piloté par Arduino. Objectif : sécuriser l’accès à un compartiment via un code et capteurs."
+          data-role="Conception des circuits, codage Arduino (C/C++), tests et documentation."
+          data-results='["Prototype fonctionnel", "Présentation en soutenance", "Documentation CESI"]'
+          data-tech="Arduino, C/C++, capteur, servomoteur"
+          data-link="projet-strongbox.html"
+        >
+          <img src="images/strongbox.jpg" alt="STRONGBOX 3000">
+          <h4>STRONGBOX 3000</h4>
+          <p class="tags">Projet électronique • Arduino • Circuits</p>
+          <div class="card-actions">
+            <button type="button" class="btn open-detail">Détail</button>
+          </div>
+        </article>
+
+        <!-- Traitement du Signal -->
+        <article class="h-card"
+          data-summary="Analyse et filtrage de signaux (bruit, fréquence), visualisation spectrale et restitution."
+          data-role="Modélisation, scripts Python, interprétation des résultats."
+          data-results='["Filtre opérationnel", "Rapport synthèse", "Courbes comparatives"]'
+          data-tech="Python, NumPy, SciPy, Matplotlib"
+          data-link="projet-TDS.html"
+        >
+          <img src="images/signal780.jpg" alt="Traitement du signal">
+          <h4>Traitement du Signal</h4>
+          <p class="tags">Signal • Onde • Python</p>
+          <div class="card-actions">
+            <button type="button" class="btn open-detail">Détail</button>
+          </div>
+        </article>
+
+        <!-- Base de données -->
+        <article class="h-card"
+          data-summary="Conception d’un schéma relationnel pour une PME : MCD/MLD, intégration, requêtes et reporting."
+          data-role="Modélisation, SQL, vues et procédures, export vers Excel."
+          data-results='["Schéma validé", "Jeu de requêtes", "Tableau de bord KPI"]'
+          data-tech="SQL, Excel, Power Query"
+          data-link="projet-BDD.html"
+        >
+          <img src="images/bdd780v2.jpg" alt="Base de données">
+          <h4>Modélisation Base de Données</h4>
+          <p class="tags">SQL • Data • Excel</p>
+          <div class="card-actions">
+            <button type="button" class="btn open-detail">Détail</button>
+          </div>
+        </article>
+
+        <!-------------------PROJETS A2 -------- -->
+        <!-- Systèmes Embarqués -->
+        <article class="h-card"
+          data-summary="Conception d’un Prototype de station météo."
+          data-role="en cours..."
+          data-results='["en cours..."]'
+          data-tech="en cours..."
+          data-link="projet-SE.html"
+        >
+          <img src="images/SE.png" alt="en cours...">
+          <h4>en cours...</h4>
+          <p class="tags">• en cours...</p>
+          <div class="card-actions">
+            <button type="button" class="btn open-detail">Détail</button>
+          </div>
+        </article>
+        
+        <!-- Réseaux & Systèmes -->
+        <article class="h-card"
+          data-summary="Conception d’un réseau d’entreprise."
+          data-role="en cours..."
+          data-results='["en cours..."]'
+          data-tech="en cours..."
+          data-link="projet-RS.html"
+        >
+          <img src="images/RS.jpeg" alt="en cours...">
+          <h4>en cours...</h4>
+          <p class="tags">• en cours...</p>
+          <div class="card-actions">
+            <button type="button" class="btn open-detail">Détail</button>
+          </div>
+        </article>
+
+        <!-- Développement Web -->
+        <article class="h-card"
+          data-summary="Conception d'une application web complète"
+          data-role="en cours..."
+          data-results='["en cours..."]'
+          data-tech="en cours..."
+          data-link="projet-DW.html"
+        >
+          <img src="images/DW.png" alt="en cours...">
+          <h4>en cours...</h4>
+          <p class="tags">• en cours...</p>
+          <div class="card-actions">
+            <button type="button" class="btn open-detail">Détail</button>
+          </div>
+        </article>
+
+
+
+      </div>
+
+      <!-- ======== Perso ======== -->
+      <h3>Projets Personnels</h3>
+      <div class="h-gallery">
+
+        <!-- Dashboard KPI -->
+        <article class="h-card"
+          data-summary="Tableau de bord financier : performance du portefeuille, drawdown, Sharpe, secteurs."
+          data-role="Nettoyage des données, calculs d’indicateurs, design des visuels."
+          data-results='["Suivi mensuel", "Insight secteurs", "Amélioration prise de décision"]'
+          data-tech="Power BI, Excel, Python (pandas)"
+          data-link="https://github.com/Shahineze-Kadiri/finance-dashboard"
+        >
+          <img src="images/dashboard.png" alt="Dashboard KPI Financier">
+          <h4>Dashboard KPI Financier</h4>
+          <p class="tags">Data • PowerBI • Excel</p>
+          <div class="card-actions">
+            <button type="button" class="btn open-detail">Détail</button>
+          </div>
+        </article>
+
+        <!-- Analyse IoT -->
+        <article class="h-card"
+          data-summary="Extraction et analyse de données capteurs (IoT) : anomalies, tendances et alerting."
+          data-role="Pipeline de préparation, features, visualisation."
+          data-results='["Détection d’anomalies", "Rapport technique & métier"]'
+          data-tech="Python, pandas, plotly"
+          data-link="https://github.com/Shahineze-Kadiri/iot-analytics"
+        >
+          <img src="images/Analyse_Données.jpg" alt="Analyse de Données IoT">
+          <h4>Analyse de Données IoT</h4>
+          <p class="tags">Data • Python • IoT • Capteurs </p>
+          <div class="card-actions">
+            <button type="button" class="btn open-detail">Détail</button>
+          </div>
+        </article>
+
+        <!-- Ventes saisonnières -->
+        <article class="h-card"
+          data-summary="Étude des ventes par saison : détection de saisonnalité, lissage et prévisions simples."
+          data-role="Préparation, modèles simples, restitution claire."
+          data-results='["Saisonnalité identifiée", "Recommandations commerciales"]'
+          data-tech="Excel, Python"
+          data-link="https://github.com/Shahineze-Kadiri/ventes-saisonnieres"
+        >
+          <img src="images/analyse_ventes.png" alt="Analyse des ventes saisonnières">
+          <h4>Analyse des ventes saisonnières</h4>
+          <p class="tags">Excel • Python</p>
+          <div class="card-actions">
+            <button type="button" class="btn open-detail">Détail</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Parcours -->
+    <section id="parcours" class="panel reveal">
+      <h2>Parcours</h2>
+      <ul class="timeline">
+        <li>
+          <div class="t-bullet"></div>
+          <div class="t-card">
+            <h4>Cycle Prépa Intégré — CESI</h4>
+            <p>Mineure Numérique & Informatique (2025 → …)</p>
+            <p class="tags">Bases de données • Data • Modélisation</p>
+          </div>
+        </li>
+        <li>
+          <div class="t-bullet"></div>
+          <div class="t-card">
+            <h4>Projets académiques & associatifs</h4>
+            <p>Conception, analyse, esprit d’équipe</p>
+            <p class="tags">Organisation • Présentation • </p>
+          </div>
+        </li>
       </ul>
+      <p><a class="btn" href="cv.pdf" target="_blank" rel="noopener">Télécharger mon CV</a></p>
+    </section>
+
+    
+
+    <!-- Contact -->
+    <section id="contact" class="panel reveal">
+      <h2>Contact</h2>
+      <form class="contact-form" action="mailto:ton.email@example.com" method="post" enctype="text/plain">
+        <label>Nom <input type="text" name="name" required></label>
+        <label>Email <input type="email" name="email" required></label>
+        <label>Objet <input type="text" name="subject" required></label>
+        <label>Message <textarea name="message" rows="4" required></textarea></label>
+        <button type="submit" class="btn">Envoyer</button>
+      </form>
+      <p class="contact-links">
+        <a href="https://www.linkedin.com/in/shahineze" target="_blank">LinkedIn</a> ·
+        <a href="https://github.com/TonPseudo" target="_blank">GitHub</a>
+      </p>
     </section>
   </main>
 
-  <!-- =========================================
-       Pied de page
-       ========================================= -->
+  <!-- Footer -->
   <footer>
     <p>&copy; 2025 Shahineze. Tous droits réservés.</p>
-    <p><a href="mailto:ton.email@example.com">Me contacter</a></p>
   </footer>
 
-  <!-- Script d’interactions -->
+  <!-- =========================
+       MODAL DETAIL PROJET (squelette)
+       ========================= -->
+  <div id="project-modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal__dialog">
+      <button class="modal__close" aria-label="Fermer le détail">×</button>
+
+      <div class="modal__content">
+        <div class="modal__media">
+          <img id="modal-img" src="" alt="">
+        </div>
+
+        <div class="modal__text">
+          <h3 id="modal-title">Titre du projet</h3>
+          <p id="modal-tags" class="tags">Mots-clés</p>
+
+          <div class="modal__meta">
+            <h4>Contexte</h4>
+            <p id="modal-summary">Description à venir…</p>
+
+            <h4>Rôle</h4>
+            <p id="modal-role">—</p>
+
+            <h4>Résultats</h4>
+            <ul id="modal-results"><li>—</li></ul>
+
+            <h4>Technos</h4>
+            <p id="modal-tech">—</p>
+          </div>
+
+          <div class="modal__actions">
+            <a id="modal-link" class="btn" href="#" target="_blank" rel="noopener">Détail complet</a>
+            <button class="btn ghost modal__close2" type="button">Fermer</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Script -->
   <script src="script.js"></script>
 </body>
 </html>
