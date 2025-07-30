@@ -1,0 +1,235 @@
+
+/* ===================================================
+   STYLE GLOBAL — "Luxe & Élégant"
+   - Palette, typographies, espacements cohérents
+   - Header fixe, navigation fluide
+   - Grille de projets + effets doux
+   - Révélations au scroll (classes .reveal/.visible)
+   =================================================== */
+
+/* -------- Palette & échelle d’espaces -------- */
+:root{
+  --onyx: #000000;      /* noir profond */
+  --pearl: #FDFFFF;     /* blanc cassé, fond doux */
+  --champagne: #D2B68A; /* accent premium (boutons/hover) */
+  --velvet: #222D52;    /* bleu nuit élégant (titres) */
+  --marble: #EBEAE0;    /* fond de section alternatif */
+  --silk: #EEE5D8;      /* nuance douce optionnelle */
+
+  --space-1: .5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2rem;
+  --space-5: 3rem;
+
+  --maxw: 1100px;       /* largeur max du contenu */
+}
+
+/* -------- Base & accessibilité -------- */
+*{ box-sizing: border-box; }
+html{ scroll-behavior: smooth; }
+body{
+  margin: 0;
+  font-family: 'Lato', Arial, sans-serif;
+  color: var(--onyx);
+  background: var(--pearl);
+  padding-top: 80px; /* compense le header fixe */
+}
+
+/* Lien d’évitement (visible au focus clavier) */
+.skip-link{
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+  background: var(--champagne);
+  color: var(--onyx);
+  padding: .5rem .75rem;
+  border-radius: 6px;
+}
+.skip-link:focus{
+  left: 1rem; top: 1rem;
+}
+
+/* -------- Titres & paragraphes -------- */
+h1, h2, h3{
+  margin: 0 0 var(--space-2) 0;
+  line-height: 1.2;
+  font-family: 'Playfair Display', serif;
+  color: var(--velvet);
+}
+h1{ font-size: clamp(2rem, 1.6rem + 1vw, 2.5rem); }
+h2{ font-size: clamp(1.6rem, 1.2rem + 1vw, 2rem); }
+h3{ font-size: clamp(1.1rem, 1rem + .6vw, 1.35rem); }
+
+p, li{ line-height: 1.7; margin-bottom: .75rem; }
+.section-intro{ max-width: 700px; }
+
+/* -------- Header (fixe) & navigation -------- */
+header{
+  position: fixed; inset: 0 0 auto 0;
+  z-index: 1000;
+
+  display: flex; align-items: center; justify-content: space-between;
+  background: var(--onyx); color: var(--pearl);
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,.08);
+}
+header.scrolled{ box-shadow: 0 6px 18px rgba(0,0,0,.12); }
+
+.brand .logo{
+  color: var(--pearl);
+  font-weight: 700;
+  letter-spacing: .5px;
+}
+
+nav ul{
+  list-style: none; display: flex; gap: var(--space-3);
+  margin: 0; padding: 0;
+}
+nav a{ color: var(--pearl); text-decoration: none; }
+nav a:hover, nav a.active{ color: var(--champagne); }
+
+/* Bouton menu (visible seulement sur mobile) */
+.menu-toggle{
+  display: none;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,.3);
+  color: var(--pearl);
+  padding: .35rem .6rem;
+  border-radius: 6px;
+}
+
+/* -------- Disposition globale -------- */
+main{
+  width: min(var(--maxw), 100% - 2rem);
+  margin-inline: auto;
+}
+section{
+  padding-block: var(--space-5);
+  scroll-margin-top: 90px; /* ancres visibles sous le header */
+}
+section + section{ border-top: 1px solid #eee; }
+section:nth-of-type(even){ background: var(--marble); }
+
+/* -------- Hero (Accueil) -------- */
+.hero{
+  display: grid; gap: var(--space-3);
+  align-items: start;
+}
+.cta{ display: flex; gap: var(--space-2); flex-wrap: wrap; }
+
+/* -------- Boutons -------- */
+.btn{
+  display: inline-block;
+  padding: .6rem 1.1rem;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  background: var(--champagne);
+  color: var(--onyx);
+  transition: transform .2s, box-shadow .2s, background .2s, color .2s;
+}
+.btn:hover{
+  background: var(--velvet);
+  color: var(--pearl);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0,0,0,.15);
+}
+.btn.ghost{
+  background: transparent;
+  border-color: var(--champagne);
+  color: var(--velvet);
+}
+.btn.ghost:hover{
+  background: var(--champagne);
+  color: var(--onyx);
+}
+
+/* -------- Grille des projets -------- */
+.projets-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-4);
+  margin-top: var(--space-2);
+  padding: 1rem 0;
+}
+.carte{
+  background: var(--marble);
+  border-radius: 10px;
+  text-align: center;
+  padding: 1.25rem;
+  border: 1px solid rgba(0,0,0,.06);
+  transition: transform .3s, box-shadow .3s;
+}
+.carte:hover{
+  transform: translateY(-5px);
+  box-shadow: 0 10px 24px rgba(0,0,0,.15);
+}
+.carte img{
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* -------- Compétences -------- */
+.skills{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-4);
+}
+
+/* -------- Contact -------- */
+.contact-list{
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: .5rem;
+}
+
+/* -------- Footer -------- */
+footer{
+  background: var(--onyx);
+  color: var(--pearl);
+  text-align: center;
+  padding: 1.25rem 2rem;
+  margin-top: var(--space-5);
+}
+footer a{ color: var(--pearl); }
+footer a:hover{ color: var(--champagne); }
+
+/* -------- Animations d’apparition -------- */
+.reveal{
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity .6s ease, transform .6s ease;
+  will-change: opacity, transform;
+}
+.reveal.visible{
+  opacity: 1;
+  transform: none;
+}
+
+/* -------- Focus clavier visible -------- */
+a:focus, button:focus, .btn:focus{
+  outline: 3px solid var(--champagne);
+  outline-offset: 2px;
+}
+
+/* -------- Responsive (tablette & mobile) -------- */
+@media (max-width: 900px){
+  header{ padding: .8rem 1rem; }
+  nav ul{ gap: var(--space-2); }
+}
+
+@media (max-width: 768px){
+  /* Nav mobile : menu burger visible, nav replié par défaut */
+  .menu-toggle{ display: inline-block; }
+  nav{ display: none; }
+  nav.open{ display: block; }
+  nav ul{
+    flex-direction: column;
+    gap: .5rem;
+    margin-top: .75rem;
+  }
+
+  section{ padding-block: var(--space-4); }
+  h1{ text-align: left; }
+}

@@ -1,0 +1,180 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <!--
+    ==============================================
+    Portfolio Shahineze — Version starter documentée
+    ==============================================
+    Ce fichier définit la structure (HTML) du site.
+    - Le style est dans "style.css"
+    - Les interactions sont dans "script.js"
+    Bonnes pratiques incluses : accessibilité, SEO léger,
+    et balises Open Graph pour un joli partage.
+  -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio — Shahineze</title>
+  <meta name="description" content="Portfolio de Shahineze — Finance, Data & Tech. Projets, compétences et contact.">
+  <!-- Open Graph (partage réseaux) -->
+  <meta property="og:title" content="Portfolio — Shahineze">
+  <meta property="og:description" content="Finance, Data & Tech. Projets, compétences et contact.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="images/aperçu.png">
+
+  <!-- Polices Google : titres élégants + corps lisible -->
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+
+  <!-- Icône d’onglet -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Feuille de style -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Lien d’évitement (accessibilité clavier) -->
+  <a class="skip-link" href="#accueil">Aller au contenu</a>
+
+  <!-- =========================================
+       En-tête fixe avec navigation
+       ========================================= -->
+  <header>
+    <div class="brand">
+      <!-- Le "logo" texte peut être remplacé plus tard par une image -->
+      <a href="#accueil" class="logo" aria-label="Retour à l’accueil">Shahineze</a>
+    </div>
+
+    <!-- Bouton menu mobile (caché sur desktop) -->
+    <button class="menu-toggle" aria-expanded="false" aria-controls="nav" aria-label="Ouvrir le menu">
+      ☰
+    </button>
+
+    <nav id="nav" aria-label="Navigation principale">
+      <ul>
+        <li><a href="#accueil">Accueil</a></li>
+        <li><a href="#projets">Projets</a></li>
+        <li><a href="#competences">Compétences</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- =========================================
+       Contenu principal
+       ========================================= -->
+  <main>
+    <!-- -------- Accueil -------- -->
+    <section id="accueil" class="reveal">
+      <div class="hero">
+        <h1>Finance · Data · Élégance</h1>
+        <p>
+          Étudiante ingénieure passionnée par la finance et la data. 
+          J’allie rigueur analytique, sens de l’esthétique et éthique professionnelle.
+        </p>
+        <div class="cta">
+          <a class="btn" href="#projets">Voir mes projets</a>
+          <a class="btn ghost" href="#contact">Me contacter</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- -------- Projets -------- -->
+    <section id="projets" class="reveal">
+      <h2>Mes Projets</h2>
+      <p class="section-intro">
+        Sélection de travaux en finance et data. Chaque carte renvoie vers un dépôt GitHub ou un rapport.
+      </p>
+      <div class="projets-container">
+        <!-- Carte projet 1 -->
+        <article class="carte reveal">
+          <img src="images/projet1.jpg" alt="Aperçu du projet 1">
+          <h3>Projet 1 — Analyse financière</h3>
+          <p>Étude de valorisation et analyse de performance d’un portefeuille (placeholder).</p>
+          <a href="#" class="btn" target="_blank" rel="noopener noreferrer">Voir le projet</a>
+        </article>
+
+        <!-- Carte projet 2 -->
+        <article class="carte reveal">
+          <img src="images/projet2.jpg" alt="Aperçu du projet 2">
+          <h3>Projet 2 — Data & Prédiction</h3>
+          <p>Modèle de prédiction simple (classification ou régression) + visualisations (placeholder).</p>
+          <a href="#" class="btn" target="_blank" rel="noopener noreferrer">Voir le projet</a>
+        </article>
+
+        <!-- Carte projet 3 -->
+        <article class="carte reveal">
+          <img src="images/projet3.jpg" alt="Aperçu du projet 3">
+          <h3>Projet 3 — SQL & Dashboard</h3>
+          <p>Base de données relationnelle + requêtes avancées et petit dashboard (placeholder).</p>
+          <a href="#" class="btn" target="_blank" rel="noopener noreferrer">Voir le projet</a>
+        </article>
+
+        <!-- Carte projet 4 -->
+        <article class="carte reveal">
+          <img src="images/projet4.jpg" alt="Aperçu du projet 4">
+          <h3>Projet 4 — Étude de cas</h3>
+          <p>Cas pratique (finance/luxe/industrie) documenté avec métriques clés (placeholder).</p>
+          <a href="#" class="btn" target="_blank" rel="noopener noreferrer">Voir le projet</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- -------- Compétences -------- -->
+    <section id="competences" class="reveal">
+      <h2>Compétences</h2>
+      <div class="skills">
+        <div>
+          <h3>Data & Tech</h3>
+          <ul>
+            <li>Python (pandas, numpy, matplotlib, scikit‑learn)</li>
+            <li>SQL (modélisation, requêtes)</li>
+            <li>Excel avancé (Tableaux croisés, formules)</li>
+            <li>Git & GitHub</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Finance & Business</h3>
+          <ul>
+            <li>Analyse financière (ratios, valorisation)</li>
+            <li>Marchés & portefeuille (notions)</li>
+            <li>Veille & synthèse</li>
+            <li>Présentation & storytelling</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Soft skills</h3>
+          <ul>
+            <li>Organisation & rigueur</li>
+            <li>Esprit d’analyse</li>
+            <li>Communication</li>
+            <li>Éthique & respect des valeurs</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- -------- Contact -------- -->
+    <section id="contact" class="reveal">
+      <h2>Contact</h2>
+      <p>Ouverte aux opportunités en finance, data, luxe et industrie.</p>
+      <ul class="contact-list">
+        <li>📧 Email : <a href="mailto:ton.email@example.com">ton.email@example.com</a></li>
+        <li>💼 LinkedIn : <a href="#" target="_blank" rel="noopener noreferrer">mon profil</a></li>
+        <li>🐙 GitHub : <a href="#" target="_blank" rel="noopener noreferrer">mon compte</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- =========================================
+       Pied de page
+       ========================================= -->
+  <footer>
+    <p>&copy; 2025 Shahineze. Tous droits réservés.</p>
+    <p><a href="mailto:ton.email@example.com">Me contacter</a></p>
+  </footer>
+
+  <!-- Script d’interactions -->
+  <script src="script.js"></script>
+</body>
+</html>
