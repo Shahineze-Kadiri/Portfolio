@@ -703,3 +703,54 @@ main{
   margin-bottom: 1rem;
 }
 
+/* Images responsives */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Bouton de fermeture (X) toujours bien placé */
+.modal__close,
+.modal__close2 {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Spécifique mobile : tout s’adapte en dessous de 768px */
+@media (max-width: 768px) {
+  .modal__dialog {
+    width: 95%;
+    margin: 20px auto;
+  }
+  .modal__media img {
+    max-height: 250px; /* évite qu’une grande image déborde */
+    object-fit: contain;
+  }
+  .hero-signature h1 {
+    font-size: 2rem; /* réduire le titre */
+  }
+  .subtitle, .baseline {
+    font-size: 0.9rem;
+  }
+}
+.modal__close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #333; /* couleur adaptée à ton thème */
+}
+
+.modal__close:hover {
+  color: #000; /* effet au survol */
+}
