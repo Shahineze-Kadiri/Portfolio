@@ -429,6 +429,72 @@ a:focus, button:focus, .btn:focus{
 /* =========================
    6) A PROPOS & CONTACT
    ========================= */
+  /* Section "À propos" */
+#about {
+  text-align: center;
+  margin: 4rem auto;
+  max-width: 1000px;
+}
+
+#about h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--velvet);
+}
+
+/* Conteneur cadré */
+.about-grid.card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+/* Sous-titres */
+.about-grid h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: var(--velvet);
+  border-bottom: 2px solid var(--velvet);
+  display: inline-block;
+  padding-bottom: 0.3rem;
+}
+
+/* Texte */
+.about-grid p {
+  line-height: 1.6;
+  text-align: justify;
+}
+
+/* Listes */
+.about-grid ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.about-grid li {
+  margin: 0.5rem 0;
+  padding-left: 1.2rem;
+  position: relative;
+}
+
+.about-grid li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: var(--velvet);
+  font-size: 0.9rem;
+}
+
+
+
+
+
+
 .about-grid{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -754,3 +820,139 @@ img {
 .modal__close:hover {
   color: #000; /* effet au survol */
 }
+
+/* =========================
+   PAGE PROJET (mise en page)
+   ========================= */
+
+/* Conteneur principal des pages projets */
+.page-projet {
+  max-width: 950px;        /* largeur confortable pour lecture */
+  margin: 0 auto;          /* centre le bloc */
+  padding: 2rem 1rem;      /* espace autour du texte */
+  line-height: 1.75;       /* lisibilité accrue */
+}
+
+/* Titre principal du projet */
+.page-projet h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  color: var(--velvet);
+}
+
+/* Sous-titres (clairs et espacés) */
+.page-projet h2, 
+.page-projet h3 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  text-align: left;
+  color: var(--velvet);
+}
+
+/* Paragraphes */
+.page-projet p {
+  text-align: justify;      /* lisibilité pro et équilibrée */
+  margin-bottom: 1rem;
+}
+
+/* Images */
+.page-projet img {
+  display: block;
+  margin: 1.5rem auto;      /* centrées avec marge */
+  border-radius: 8px;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Listes (plus aérées) */
+.page-projet ul {
+  margin: 1rem 0 1.5rem 1.5rem;
+  line-height: 1.7;
+}
+
+/* Boutons ou liens vers projet/code */
+.page-projet .cta {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+/* =========================
+   PAGE PROJET (ajouts stylés)
+   ========================= */
+
+/* Tags sous le titre */
+.page-projet .tags {
+  text-align: center;
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+
+/* Image principale (cover) */
+.page-projet .project-cover img {
+  max-width: 700px;
+  width: 100%;
+  margin: 0 auto 2rem auto;
+  display: block;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* Liste des livrables */
+.page-projet .livrables {
+  list-style: none;  /* enlève les puces */
+  padding: 0;
+}
+
+.page-projet .livrables li {
+  margin: 0.7rem 0;
+}
+
+.page-projet .livrables a {
+  text-decoration: none;         /* pas de soulignement */
+  color: var(--velvet);          /* reprend ta couleur principale */
+  font-weight: 500;
+  transition: color 0.2s, transform 0.2s;
+}
+
+.page-projet .livrables a:hover {
+  color: var(--velvet-dark);     /* variation plus foncée */
+  transform: translateX(4px);    /* léger décalage au hover */
+}
+
+/* Résultats (liste plus visuelle) */
+.page-projet ul li {
+  margin-bottom: 0.5rem;
+}
+
+/* Compétences */
+.page-projet .skills {
+  background: #f9f9f9;
+  padding: 0.8rem 1rem;
+  border-left: 4px solid var(--velvet);
+  border-radius: 6px;
+  font-size: 0.95rem;
+  color: #333;
+  margin-top: 1rem;
+}
+
+/* Bouton retour */
+.page-projet .btn.ghost {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  border: 2px solid var(--velvet);
+  border-radius: 6px;
+  color: var(--velvet);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.page-projet .btn.ghost:hover {
+  background: var(--velvet);
+  color: #fff;
+}
+
+

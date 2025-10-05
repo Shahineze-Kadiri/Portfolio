@@ -233,3 +233,22 @@ if (modal) {
 
 
 
+const form = document.getElementById('contactForm');
+if (form) {
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+    const response = await fetch(form.action, {
+      method: form.method,
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (response.ok) {
+      alert("Merci ! Votre message a bien été envoyé.");
+      form.reset(); // vide le formulaire
+    } else {
+      alert("Une erreur est survenue. Réesseyez plus tard.");
+    }
+  });
+}

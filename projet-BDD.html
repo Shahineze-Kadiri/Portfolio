@@ -3,24 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Détail du projet — NOM DU PROJET</title>
-  <meta name="description" content="Détail du projet CESI : NOM DU PROJET">
+  <title>Détail du projet — Projet CLEARDATA</title>
+  <meta name="description" content="Détail du projet CESI : Projet CLEARDATA">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- On réutilise ton header/sidebar pour cohérence -->
+  <!-- Lien d’accessibilité -->
   <a class="skip-link" href="#projet">Aller au contenu</a>
 
   <!-- Header mobile -->
   <header class="mobile-only">
     <div class="brand">
-      <a href="index.html" class="logo" aria-label="Retour au portfolio">Shahineze</a>
+      <a href="index.html" class="logo" aria-label="Retour au portfolio">Kadiri Shahineze</a>
     </div>
   </header>
 
   <!-- Sidebar desktop -->
   <aside class="sidebar">
-    <a href="index.html" class="brand">Shahineze</a>
+    <a href="index.html" class="brand">Kadiri Shahineze</a>
     <nav class="sidenav">
       <a href="index.html#home">Accueil</a>
       <a href="index.html#projets">Projets</a>
@@ -32,51 +32,68 @@
 
   <!-- Contenu principal -->
   <main>
-    <section id="projet" class="panel reveal">
-      <h1>NOM DU PROJET</h1>
-      <p class="tags">Catégorie · Technos principales</p>
+    <section id="projet" class="page-projet panel reveal">
+
+      <!-- Titre + tags -->
+      <h1 class="project-title">Projet CLEARDATA</h1>
+      <p class="tags">
+        ⚡ Base De Donnée · Langage SQL · MySQL Workbench · Arbres algébriques · Excel 
+      </p>
 
       <!-- Image principale -->
-      <img src="images/strongbox.jpg" alt="NOM DU PROJET" style="max-width: 600px; border-radius: 10px; margin: 1rem 0;">
+      <div class="project-cover">
+        <img src="images/bdd780v2.jpg" alt="Prototype STRONGBOX 3000">
+      </div>
 
       <!-- Contexte -->
       <h2>Contexte</h2>
       <p>
-        Explique en 4-5 lignes le contexte du projet (problématique, objectifs).
+       Client : Ministère de la Transition écologique.   
+
+      Demande : Réaliser un outil pour stocker/questionner des données publiques sur la qualité de l’air en rapport avec les 
+      grandes villes de France, étant déjà stocké dans des agences dans toute la France, mais que nous devons relier en une seule 
+      base de données globale. 
+        Entre autres, il nous faut concevoir un outil comportant une base de données afin de stocker, centraliser et analyser des 
+      données publiques sur la qualité de l’air en France métropolitaine.
       </p>
 
       <!-- Consignes / cahier des charges -->
-      <h2>Consignes / Cahier des charges</h2>
+      <h2>Consignes</h2>
       <ul>
-        <li>Attendu 1</li>
-        <li>Attendu 2</li>
-        <li>Attendu 3</li>
+        <li>Développer un outil permettant de stocker/interroger les données publiques sur la qualité de l'air des grandes villes de France </li>
+        <li>Concevoir un outil doté d'une base de données pour stocker, centraliser et analyser les données publiques</li>
+        <li>Documenter la démarche et les résultats</li>
       </ul>
 
-      <!-- Rôle -->
+      <!-- Mon rôle -->
       <h2>Mon rôle</h2>
       <p>
-        Décris ce que TOI tu as fait dans ce projet (tâches clés, responsabilités).
+        J’ai participé à la conception de l'infrastructure de la Base de Donnée, à la programmation SQL, au peuplement de ceele ci, 
+        à la création et au nettoyage de données ficitves,  ainsi qu’à la rédaction des rapports techniques.  
       </p>
 
       <!-- Livrables -->
       <h2>Livrables clés</h2>
-      <ul>
-        <li><a href="livrables/livrable1.pdf" target="_blank">Rapport technique</a></li>
-        <li><a href="livrables/soutenance.pdf" target="_blank">Soutenance finale</a></li>
+      <ul class="livrables">
+        <li>📄 <a href="livrables/Livrable0_BDD_Equipe14.pdf" target="_blank">Rapport technique 0</a></li>
+        <li>📄 <a href="livrables/Livrable1_BDD_Equipe14.pdf" target="_blank">Rapport technique 1</a></li>
+        <li>📄 <a href="livrables/Livrable2_Equipe14_BDD.pdf" target="_blank">Rapport technique 2</a></li>
+        <li>📄 <a href="soutenances/Soutenance BDD .pdf" target="_blank">Soutenance</a></li>
       </ul>
 
       <!-- Résultats -->
       <h2>Résultats</h2>
       <ul>
-        <li>Prototype ou maquette fonctionnelle</li>
-        <li>Indicateur / métrique clé obtenue</li>
-        <li>Apprentissage majeur</li>
+        <li>✅ Base de Donnée fonctionnelle testée et validée </li>
+        <li>🔒 Création, nettoyage et importation de données fictives </li>
+        <li>📊 Documentation claire et complète</li>
       </ul>
 
       <!-- Compétences / technos -->
       <h2>Compétences & Technologies</h2>
-      <p>Arduino, C/C++, conception électronique, gestion de projet agile…</p>
+      <p class="skills">
+        Création de Base de Donnée · Langage SQL · Export Excel vers My SQL Workbench · Gestion de projet
+      </p>
 
       <!-- Bouton retour -->
       <div class="cta">
@@ -85,8 +102,9 @@
     </section>
   </main>
 
+  <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Shahineze. Tous droits réservés.</p>
+    <p>&copy; 2025 Kadiri Shahineze. Tous droits réservés.</p>
   </footer>
 
   <script src="script.js"></script>

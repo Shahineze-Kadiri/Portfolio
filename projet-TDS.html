@@ -3,24 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Détail du projet — NOM DU PROJET</title>
-  <meta name="description" content="Détail du projet CESI : NOM DU PROJET">
+  <title>Détail du projet — NO ESCAPE NO GAME</title>
+  <meta name="description" content="Détail du projet CESI : NO ESCAPE NO GAME">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- On réutilise ton header/sidebar pour cohérence -->
+  <!-- Lien d’accessibilité -->
   <a class="skip-link" href="#projet">Aller au contenu</a>
 
   <!-- Header mobile -->
   <header class="mobile-only">
     <div class="brand">
-      <a href="index.html" class="logo" aria-label="Retour au portfolio">Shahineze</a>
+      <a href="index.html" class="logo" aria-label="Retour au portfolio">Kadiri Shahineze</a>
     </div>
   </header>
 
   <!-- Sidebar desktop -->
   <aside class="sidebar">
-    <a href="index.html" class="brand">Shahineze</a>
+    <a href="index.html" class="brand">Kadiri Shahineze</a>
     <nav class="sidenav">
       <a href="index.html#home">Accueil</a>
       <a href="index.html#projets">Projets</a>
@@ -32,51 +32,70 @@
 
   <!-- Contenu principal -->
   <main>
-    <section id="projet" class="panel reveal">
-      <h1>NOM DU PROJET</h1>
-      <p class="tags">Catégorie · Technos principales</p>
+    <section id="projet" class="page-projet panel reveal">
+
+      <!-- Titre + tags -->
+      <h1 class="project-title">NO ESCAPE NO GAME</h1>
+      <p class="tags">
+        ⚡ Signal · Langage Python · Filtrage · Capteurs · Composants électroniques · Tinkercad
+      </p>
 
       <!-- Image principale -->
-      <img src="images/strongbox.jpg" alt="NOM DU PROJET" style="max-width: 600px; border-radius: 10px; margin: 1rem 0;">
+      <div class="project-cover">
+        <img src="images/signal780.jpg" alt="Projet-TDS">
+      </div>
 
       <!-- Contexte -->
       <h2>Contexte</h2>
       <p>
-        Explique en 4-5 lignes le contexte du projet (problématique, objectifs).
+         L'agence AIL3C fait face à une situation critique suite à la perte de l'agent K57⁠. Lors d'une mission d'infiltration dans une base
+        secrète de cyberpirates, l'agent K57 a réussi à récupérer des données importantes mais s'est retrouvé piégé dans une salle de
+        conférence⁠ avant d’avoir pu s’échapper. Lors de cette mission toute communication était rendu impossible avec l'extérieur, car la
+        pièce n'avait pas d'accès réseau⁠, les murs bloquaient toute communication par ondes⁠ et le seul équipement disponible était un
+        micro connecté au système d'audioconférence, qui n'était activé que lors de l'utilisation de la salle.⁠
+        Le département R&D doit maintenant développer une solution technique pour éviter qu'une situation similaire ne se reproduise, en
+        permettant la communication vers l'extérieur dans les même conditions
       </p>
 
       <!-- Consignes / cahier des charges -->
-      <h2>Consignes / Cahier des charges</h2>
+      <h2>Consignes</h2>
       <ul>
-        <li>Attendu 1</li>
-        <li>Attendu 2</li>
-        <li>Attendu 3</li>
+        <li>Créer un moyen de communication théorique</li>
+        <li>Transmission & Cryptage d'un message précis </li>
+        <li>Documenter la démarche et les résultats</li>
       </ul>
 
-      <!-- Rôle -->
+      <!-- Mon rôle -->
       <h2>Mon rôle</h2>
       <p>
-        Décris ce que TOI tu as fait dans ce projet (tâches clés, responsabilités).
+        J’ai participé à la détermination du filtre, à l'encodage et au décodage de l'outil de communication, 
+        ainsi qu’à la rédaction des rapports techniques.  
+    
       </p>
 
       <!-- Livrables -->
       <h2>Livrables clés</h2>
-      <ul>
-        <li><a href="livrables/livrable1.pdf" target="_blank">Rapport technique</a></li>
-        <li><a href="livrables/soutenance.pdf" target="_blank">Soutenance finale</a></li>
+      <ul class="livrables">
+        <li>📄 <a href="livrables/Livrable1_TDS_Equipe04.pdf" target="_blank">Rapport technique 1</a></li>
+        <li>📄 <a href="livrables/Livrable2_TDS_Equipe04_2.pdf" target="_blank">Rapport technique 2</a></li>
+        <li>📄 <a href="livrables/Livrable-3_TDS_Equipe04.pdf" target="_blank">Rapport technique 3</a></li>
+        <li>📄 <a href="livrables/Livrable04_TDS_Equipe04.pdf" target="_blank">Rapport technique 4</a></li>
+        <li>📄 <a href="soutenances/Soutenance TDS.pdf" target="_blank">Soutenance</a></li>
       </ul>
 
       <!-- Résultats -->
       <h2>Résultats</h2>
       <ul>
-        <li>Prototype ou maquette fonctionnelle</li>
-        <li>Indicateur / métrique clé obtenue</li>
-        <li>Apprentissage majeur</li>
+        <li>✅ Outil théorique fonctionnel testé et validé</li>
+        <li>🔒 Cryptage et décryptage du message  </li>
+        <li>📊 Documentation claire et complète</li>
       </ul>
 
       <!-- Compétences / technos -->
       <h2>Compétences & Technologies</h2>
-      <p>Arduino, C/C++, conception électronique, gestion de projet agile…</p>
+      <p class="skills">
+        Physique · Langage Python · Electricité · Gestion de projet
+      </p>
 
       <!-- Bouton retour -->
       <div class="cta">
@@ -85,8 +104,9 @@
     </section>
   </main>
 
+  <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Shahineze. Tous droits réservés.</p>
+    <p>&copy; 2025 Kadiri Shahineze. Tous droits réservés.</p>
   </footer>
 
   <script src="script.js"></script>
