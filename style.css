@@ -956,37 +956,27 @@ img {
 }
 
 
-/* --- RESPONSIVE MOBILE --- */
+/* --- Responsive (mobile) --- */
 @media (max-width: 900px) {
   .about-content {
-    display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    text-align: center;
     gap: 1.5rem;
   }
 
   .about-content > div {
-    width: 90%;
+    width: 100%;
+    max-width: 90%;
     margin: 0 auto;
   }
 
   .about-content h3 {
+    text-align: center;
     font-size: 1.3rem;
-    border-bottom: 2px solid var(--accent-color);
-    display: inline-block;
-    margin-bottom: 0.8rem;
   }
 
-  .about-content p {
-    font-size: 1rem;
-    line-height: 1.7;
+  .about-content p,
+  .about-content ul {
     text-align: justify;
-  }
-
-  section#about {
-    padding: 2rem 1rem;
+    font-size: 1rem;
   }
 }
