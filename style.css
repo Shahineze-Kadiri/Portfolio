@@ -507,29 +507,6 @@ a:focus, button:focus, .btn:focus{
   }
 }
 
-.about-grid li {
-  margin: 0.5rem 0;
-  padding-left: 1.2rem;
-  position: relative;
-}
-
-.about-grid li::before {
-  content: "✔";
-  position: absolute;
-  left: 0;
-  color: var(--velvet);
-  font-size: 0.9rem;
-}
-
-
-
-.about-grid{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: var(--space-4);
-  text-align: center;
-}
-
 
 
 .contact-form{
