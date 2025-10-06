@@ -957,38 +957,36 @@ img {
 
 
 /* --- RESPONSIVE MOBILE --- */
-@media (max-width: 768px) {
-
-  /* Ajuste la mise en page des sections en colonnes */
+@media (max-width: 900px) {
   .about-content {
+    display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
     text-align: center;
+    gap: 1.5rem;
   }
 
   .about-content > div {
     width: 90%;
-    margin-bottom: 2rem;
+    margin: 0 auto;
   }
 
-  /* Taille du texte adaptée */
+  .about-content h3 {
+    font-size: 1.3rem;
+    border-bottom: 2px solid var(--accent-color);
+    display: inline-block;
+    margin-bottom: 0.8rem;
+  }
+
   .about-content p {
     font-size: 1rem;
     line-height: 1.7;
     text-align: justify;
   }
 
-  /* Titres centrés */
-  .about-content h3 {
-    font-size: 1.3rem;
-    text-align: center;
-    border-bottom: 2px solid var(--accent-color);
-    display: inline-block;
-    padding-bottom: 0.2rem;
-  }
-
-  /* Ajustement global du padding */
-  section {
+  section#about {
     padding: 2rem 1rem;
   }
 }
