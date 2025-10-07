@@ -486,7 +486,7 @@ a:focus, button:focus, .btn:focus{
 }
 
 .about-content li::before {
-  content: "✔";
+  content: "";
   position: absolute;
   left: 0;
   color: var(--velvet);
@@ -506,6 +506,31 @@ a:focus, button:focus, .btn:focus{
     display: block;
   }
 }
+
+
+/* Correction d’alignement pour la section À propos (desktop uniquement) */
+@media (min-width: 768px) {
+  .about-grid.card {
+    display: flex;
+    align-items: flex-start; /* aligne le haut par défaut */
+    gap: 2rem;
+  }
+
+  .about-left, .about-right {
+    flex: 1;
+  }
+
+  /* Ajustement fin : aligne les titres et le texte de façon plus douce */
+  .about-left {
+    padding-top: 0.5rem; /* tu peux monter ou descendre cette valeur */
+  }
+
+  .about-right {
+    padding-top: 1.2rem; /* ajuste cette valeur pour que les deux blocs soient visuellement alignés */
+  }
+}
+
+
 
 
 
